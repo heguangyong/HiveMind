@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+This software is in the public domain under CC0 1.0 Universal plus a
+Grant of Patent License.
+
+To the extent possible under law, the author(s) have dedicated all
+copyright and related and neighboring rights to this software to the
+public domain worldwide. This software is distributed without any
+warranty.
+
+You should have received a copy of the CC0 Public Domain Dedication
+along with this software (see the LICENSE.md file). If not, see
+<http://creativecommons.org/publicdomain/zero/1.0/>.
+-->
+<entity-facade-xml type="seed">
+    <!-- Project and Work Effort Related -->
+    <moqui.basic.LocalizedMessage original="Project" locale="zh" localized="项目"/>
+    <moqui.basic.LocalizedMessage original="Milestone" locale="zh" localized="里程碑"/>
+    <moqui.basic.LocalizedMessage original="Task" locale="zh" localized="任务"/>
+    <moqui.basic.LocalizedMessage original="Create Project" locale="zh" localized="创建项目"/>
+    <moqui.basic.LocalizedMessage original="New Feature" locale="zh" localized="新功能"/>
+    <moqui.basic.LocalizedMessage original="Bug Fix" locale="zh" localized="错误修复"/>
+    <moqui.basic.LocalizedMessage original="In Progress" locale="zh" localized="进行中"/>
+    <moqui.basic.LocalizedMessage original="Approved" locale="zh" localized="已批准"/>
+    <moqui.basic.LocalizedMessage original="Assigned" locale="zh" localized="已分配"/>
+    <moqui.basic.LocalizedMessage original="Add Assignment" locale="zh" localized="添加分配"/>
+
+    <!-- Wiki Related -->
+    <moqui.basic.LocalizedMessage original="Wiki Space" locale="zh" localized="Wiki空间"/>
+    <moqui.basic.LocalizedMessage original="Introduction" locale="zh" localized="介绍"/>
+    <moqui.basic.LocalizedMessage original="Storage Management" locale="zh" localized="存储管理"/>
+    <moqui.basic.LocalizedMessage original="Wiki Page" locale="zh" localized="Wiki页面"/>
+
+    <!-- User and Role Related -->
+    <moqui.basic.LocalizedMessage original="Admin" locale="zh" localized="管理员"/>
+    <moqui.basic.LocalizedMessage original="Programmer" locale="zh" localized="程序员"/>
+    <moqui.basic.LocalizedMessage original="Tester" locale="zh" localized="测试人员"/>
+    <moqui.basic.LocalizedMessage original="Analyst" locale="zh" localized="分析师"/>
+    <moqui.basic.LocalizedMessage original="Person" locale="zh" localized="人员"/>
+
+    <!-- Invoice and Accounting Related -->
+    <moqui.basic.LocalizedMessage original="Invoice" locale="zh" localized="发票"/>
+    <moqui.basic.LocalizedMessage original="Rate Amount" locale="zh" localized="费率金额"/>
+    <moqui.basic.LocalizedMessage original="CNY" locale="zh" localized="人民币"/>
+    <moqui.basic.LocalizedMessage original="Accounting" locale="zh" localized="会计"/>
+    <moqui.basic.LocalizedMessage original="Hosting Expense" locale="zh" localized="托管费用"/>
+
+    <!-- Request Related -->
+    <moqui.basic.LocalizedMessage original="Request" locale="zh" localized="请求"/>
+    <moqui.basic.LocalizedMessage original="New Request" locale="zh" localized="新增请求"/>
+    <moqui.basic.LocalizedMessage original="In Progress##Requests" locale="zh" localized="进行中"/>
+    <moqui.basic.LocalizedMessage original="Unresolved" locale="zh" localized="未解决"/>
+
+    <!-- Comment Related -->
+    <moqui.basic.LocalizedMessage original="Comment" locale="zh" localized="评论"/>
+    <moqui.basic.LocalizedMessage original="Web Form" locale="zh" localized="网页表单"/>
+    <moqui.basic.LocalizedMessage original="Sent" locale="zh" localized="已发送"/>
+
+    <!-- General Interface Terms -->
+    <moqui.basic.LocalizedMessage original="Create" locale="zh" localized="创建"/>
+    <moqui.basic.LocalizedMessage original="Update" locale="zh" localized="更新"/>
+    <moqui.basic.LocalizedMessage original="View" locale="zh" localized="查看"/>
+    <moqui.basic.LocalizedMessage original="Setup" locale="zh" localized="设置"/>
+    <moqui.basic.LocalizedMessage original="Content" locale="zh" localized="内容"/>
+    <moqui.basic.LocalizedMessage original="Survey" locale="zh" localized="调查"/>
+    <moqui.basic.LocalizedMessage original="New Survey" locale="zh" localized="新增调查"/>
+</entity-facade-xml>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+This software is in the public domain under CC0 1.0 Universal plus a
+Grant of Patent License.
+
+To the extent possible under law, the author(s) have dedicated all
+copyright and related and neighboring rights to this software to the
+public domain worldwide. This software is distributed without any
+warranty.
+
+You should have received a copy of the CC0 Public Domain Dedication
+along with this software (see the LICENSE.md file). If not, see
+<http://creativecommons.org/publicdomain/zero/1.0/>.
+-->
+<entity-facade-xml type="demo">
+    <!-- Party and Person Records for Users -->
+    <mantle.party.Party partyId="USER001" partyTypeEnumId="PtyPerson"/>
+    <mantle.party.Person partyId="USER001" firstName="Admin" lastName="User"/>
+    <mantle.party.Party partyId="USER002" partyTypeEnumId="PtyPerson"/>
+    <mantle.party.Person partyId="USER002" firstName="Developer" lastName="User"/>
+    <mantle.party.Party partyId="USER003" partyTypeEnumId="PtyPerson"/>
+    <mantle.party.Person partyId="USER003" firstName="Tester" lastName="User"/>
+    <mantle.party.Party partyId="USER004" partyTypeEnumId="PtyPerson"/>
+    <mantle.party.Person partyId="USER004" firstName="Analyst" lastName="User"/>
+
+    <!-- User Accounts -->
+    <moqui.security.UserAccount userId="USER001" username="admin" password="admin123" userFullName="Admin User"/>
+    <moqui.security.UserAccount userId="USER002" username="developer" password="dev123" userFullName="Developer User"/>
+    <moqui.security.UserAccount userId="USER003" username="tester" password="test123" userFullName="Tester User"/>
+    <moqui.security.UserAccount userId="USER004" username="analyst" password="analyst123" userFullName="Analyst User"/>
+
+    <!-- Wiki Space Definition -->
+    <moqui.resource.wiki.WikiSpace wikiSpaceId="NETDISK_WIKI" description="Netdisk Project Wiki Space" restrictView="N"
+                                   rootPageLocation="dbresource://WikiSpace/NETDISK_WIKI.md" decoratorScreenLocation=""/>
+    <moqui.resource.wiki.WikiSpaceUser wikiSpaceId="NETDISK_WIKI" userId="USER001" receiveNotifications="Y" allowAdmin="Y" allowView="Y" allowUpdate="Y"/>
+
+    <!-- Wiki Pages for NETDISK_WIKI -->
+    <moqui.resource.wiki.WikiPage wikiPageId="NETDISK_INTRO" wikiSpaceId="NETDISK_WIKI" pagePath="Introduction" createdByUserId="USER001"/>
+    <moqui.resource.wiki.WikiPageHistory wikiPageId="NETDISK_INTRO" historySeqId="01" userId="USER001" changeDateTime="2025-09-14 00:00:00"/>
+    <moqui.resource.wiki.WikiPage wikiPageId="NETDISK_STORAGE" wikiSpaceId="NETDISK_WIKI" pagePath="StorageManagement" createdByUserId="USER004"/>
+    <moqui.resource.wiki.WikiPageHistory wikiPageId="NETDISK_STORAGE" historySeqId="01" userId="USER004" changeDateTime="2025-09-14 00:00:00"/>
+
+    <!-- Wiki Page Content -->
+    <moqui.resource.DbResource resourceId="NETDISK_INTRO_CWIKI" parentResourceId="WIKI_SPACE_ROOT" filename="NETDISK_INTRO.md" isFile="Y"/>
+    <moqui.resource.DbResourceFile resourceId="NETDISK_INTRO_CWIKI" mimeType="text/plain" fileData="# Netdisk Project Introduction\nWelcome to the Netdisk project for community e-commerce."/>
+    <moqui.resource.DbResource resourceId="NETDISK_STORAGE_CWIKI" parentResourceId="WIKI_SPACE_ROOT" filename="NETDISK_STORAGE.md" isFile="Y"/>
+    <moqui.resource.DbResourceFile resourceId="NETDISK_STORAGE_CWIKI" mimeType="text/plain" fileData="# Storage Management Guide\nGuide for creating and managing storage buckets."/>
+
+    <!-- User Group Assignments -->
+    <moqui.security.UserGroupMember userGroupId="NETDISK_ADMIN" userId="USER001" fromDate="2025-09-14 00:00:00"/>
+    <moqui.security.UserGroupMember userGroupId="NETDISK_DEVELOPER" userId="USER002" fromDate="2025-09-14 00:00:00"/>
+    <moqui.security.UserGroupMember userGroupId="NETDISK_TESTER" userId="USER003" fromDate="2025-09-14 00:00:00"/>
+    <moqui.security.UserGroupMember userGroupId="NETDISK_ANALYST" userId="USER004" fromDate="2025-09-14 00:00:00"/>
+
+    <!-- Rate Amounts for Roles -->
+    <mantle.humanres.rate.RateAmount rateAmountId="NETDISK_PROG_CLIENT" rateTypeEnumId="RatpStandard" ratePurposeEnumId="RaprClient"
+                                     timePeriodUomId="TF_hr" emplPositionClassId="NetdiskProgrammer" fromDate="2025-09-14 00:00:00" rateAmount="350.00" rateCurrencyUomId="CNY"/>
+    <mantle.humanres.rate.RateAmount rateAmountId="NETDISK_TEST_CLIENT" rateTypeEnumId="RatpStandard" ratePurposeEnumId="RaprClient"
+                                     timePeriodUomId="TF_hr" emplPositionClassId="NetdiskTester" fromDate="2025-09-14 00:00:00" rateAmount="210.00" rateCurrencyUomId="CNY"/>
+    <mantle.humanres.rate.RateAmount rateAmountId="NETDISK_ANALYST_CLIENT" rateTypeEnumId="RatpStandard" ratePurposeEnumId="RaprClient"
+                                     timePeriodUomId="TF_hr" emplPositionClassId="NetdiskAnalyst" fromDate="2025-09-14 00:00:00" rateAmount="280.00" rateCurrencyUomId="CNY"/>
+
+    <!-- Netdisk Project -->
+    <mantle.work.effort.WorkEffort workEffortId="NETDISK" workEffortName="社区电商网盘" workEffortTypeEnumId="WetProject"
+                                   statusId="WeInProgress" statusFlowId="HmTaskSimple" totalClientCostAllowed="350000" costUomId="CNY"/>
+    <mantle.work.effort.WorkEffortParty workEffortId="NETDISK" partyId="USER001" roleTypeId="Manager"
+                                        emplPositionClassId="NetdiskAdmin" fromDate="2025-09-14 00:00:00" statusId="WeptAssigned"/>
+    <mantle.work.effort.WorkEffortParty workEffortId="NETDISK" partyId="USER002" roleTypeId="Assignee"
+                                        emplPositionClassId="NetdiskProgrammer" fromDate="2025-09-14 00:00:00" statusId="WeptAssigned"/>
+    <mantle.work.effort.WorkEffortParty workEffortId="NETDISK" partyId="USER003" roleTypeId="Assignee"
+                                        emplPositionClassId="NetdiskTester" fromDate="2025-09-14 00:00:00" statusId="WeptAssigned"/>
+    <mantle.work.effort.WorkEffortParty workEffortId="NETDISK" partyId="USER004" roleTypeId="Assignee"
+                                        emplPositionClassId="NetdiskAnalyst" fromDate="2025-09-14 00:00:00" statusId="WeptAssigned"/>
+
+    <!-- Milestones -->
+    <mantle.work.effort.WorkEffort workEffortId="NETDISK-MS-001" workEffortName="存储桶管理阶段"
+                                   rootWorkEffortId="NETDISK" workEffortTypeEnumId="WetMilestone" statusId="WeInProgress"
+                                   estimatedStartDate="2025-09-14 00:00:00" estimatedCompletionDate="2025-09-28 00:00:00"/>
+    <mantle.work.effort.WorkEffort workEffortId="NETDISK-MS-002" workEffortName="文件操作阶段"
+                                   rootWorkEffortId="NETDISK" workEffortTypeEnumId="WetMilestone" statusId="WeInPlanning"
+                                   estimatedStartDate="2025-09-29 00:00:00" estimatedCompletionDate="2025-10-13 00:00:00"/>
+
+    <!-- Tasks -->
+    <mantle.work.effort.WorkEffort workEffortId="NETDISK-TASK-001" workEffortName="开发存储桶管理服务" priority="1"
+                                   rootWorkEffortId="NETDISK" parentWorkEffortId="" workEffortTypeEnumId="WetTask" purposeEnumId="WepNewFeature"
+                                   statusId="WeInProgress" statusFlowId="HmTaskSimple" estimatedWorkTime="20" timeUomId="TF_hr">
+        <description>开发支持创建、列出、删除存储桶的服务，包含5GB配额限制。</description>
+    </mantle.work.effort.WorkEffort>
+    <mantle.work.effort.WorkEffortParty workEffortId="NETDISK-TASK-001" partyId="USER002" roleTypeId="Assignee"
+                                        emplPositionClassId="NetdiskProgrammer" fromDate="2025-09-14 00:00:00" statusId="WeptAssigned" receiveNotifications="Y"/>
+    <mantle.work.effort.WorkEffortAssoc workEffortId="NETDISK-MS-001" toWorkEffortId="NETDISK-TASK-001"
+                                        workEffortAssocTypeEnumId="WeatMilestone" fromDate="2025-09-14 00:00:00" sequenceNum="1"/>
+    <mantle.work.TaskServices.addTaskTime partyId="USER002" hours="8" breakHours="1" workEffortId="NETDISK-TASK-001"
+                                          comments="实现存储桶创建和列出功能" fromDate="2025-09-14 08:00:00" thruDate="2025-09-14 17:00:00"/>
+
+    <mantle.work.effort.WorkEffort workEffortId="NETDISK-TASK-002" workEffortName="测试存储桶管理功能" priority="2"
+                                   rootWorkEffortId="NETDISK" parentWorkEffortId="" workEffortTypeEnumId="WetTask" purposeEnumId="WepTask"
+                                   statusId="WeApproved" statusFlowId="HmTaskSimple" estimatedWorkTime="10" timeUomId="TF_hr">
+        <description>使用JUnit/Selenium测试存储桶管理功能，确保配额限制生效。</description>
+    </mantle.work.effort.WorkEffort>
+    <mantle.work.effort.WorkEffortParty workEffortId="NETDISK-TASK-002" partyId="USER003" roleTypeId="Assignee"
+                                        emplPositionClassId="NetdiskTester" fromDate="2025-09-14 00:00:00" statusId="WeptAssigned" receiveNotifications="Y"/>
+    <mantle.work.effort.WorkEffortAssoc workEffortId="NETDISK-MS-001" toWorkEffortId="NETDISK-TASK-002"
+                                        workEffortAssocTypeEnumId="WeatMilestone" fromDate="2025-09-14 00:00:00" sequenceNum="2"/>
+    <mantle.work.effort.WikiPageWorkEffort wikiPageId="NETDISK_STORAGE" workEffortId="NETDISK-TASK-002"/>
+    <mantle.work.TaskServices.addTaskTime partyId="USER003" hours="4" breakHours="0.5" workEffortId="NETDISK-TASK-002"
+                                          comments="编写存储桶管理测试用例" fromDate="2025-09-14 09:00:00" thruDate="2025-09-14 13:30:00"/>
+
+    <mantle.work.effort.WorkEffort workEffortId="NETDISK-TASK-003" workEffortName="编写PRD文档" priority="1"
+                                   rootWorkEffortId="NETDISK" parentWorkEffortId="" workEffortTypeEnumId="WetTask" purposeEnumId="WepTask"
+                                   statusId="WeInProgress" statusFlowId="HmTaskSimple" estimatedWorkTime="15" timeUomId="TF_hr">
+        <description>编写社区电商网盘的PRD，包含存储桶管理和文件操作需求。</description>
+    </mantle.work.effort.WorkEffort>
+    <mantle.work.effort.WorkEffortParty workEffortId="NETDISK-TASK-003" partyId="USER004" roleTypeId="Assignee"
+                                        emplPositionClassId="NetdiskAnalyst" fromDate="2025-09-14 00:00:00" statusId="WeptAssigned" receiveNotifications="Y"/>
+    <mantle.work.effort.WorkEffortAssoc workEffortId="NETDISK-MS-001" toWorkEffortId="NETDISK-TASK-003"
+                                        workEffortAssocTypeEnumId="WeatMilestone" fromDate="2025-09-14 00:00:00" sequenceNum="3"/>
+    <mantle.work.effort.WikiPageWorkEffort wikiPageId="NETDISK_INTRO" workEffortId="NETDISK-TASK-003"/>
+
+    <!-- Requests -->
+    <mantle.request.Request requestId="NETDISK-REQ-001" requestTypeEnumId="RqtNewFeature" statusId="ReqInProgress"
+                            requestResolutionEnumId="RrUnresolved" requestName="添加存储桶配额功能"
+                            description="在存储桶管理中添加5GB配额限制功能。" filedByPartyId="USER004" priority="2"
+                            requestDate="2025-09-14 00:00:00" responseRequiredDate="2025-09-28 00:00:00"/>
+    <mantle.request.RequestParty requestId="NETDISK-REQ-001" partyId="USER002" roleTypeId="Assignee" fromDate="2025-09-14 00:00:00"/>
+    <mantle.request.RequestWorkEffort requestId="NETDISK-REQ-001" workEffortId="NETDISK-TASK-001"/>
+
+    <mantle.request.Request requestId="NETDISK-REQ-002" requestTypeEnumId="RqtBugFix" statusId="ReqDraft"
+                            requestResolutionEnumId="RrUnresolved" requestName="修复文件上传问题"
+                            description="文件上传失败，需检查MinIO配置和错误日志。" filedByPartyId="USER003" priority="3"
+                            requestDate="2025-09-14 00:00:00" responseRequiredDate="2025-09-21 00:00:00"/>
+    <mantle.request.RequestParty requestId="NETDISK-REQ-002" partyId="USER002" roleTypeId="Assignee" fromDate="2025-09-14 00:00:00"/>
+    <mantle.request.RequestWorkEffort requestId="NETDISK-REQ-002" workEffortId="NETDISK-TASK-001"/>
+
+    <!-- Invoices -->
+    <mantle.party.Party partyId="NETDISK_MINIO" partyTypeEnumId="PtyOrganization"/>
+    <mantle.party.Organization partyId="NETDISK_MINIO" organizationName="MinIO Cloud Services"/>
+    <mantle.party.PartyRole partyId="NETDISK_MINIO" roleTypeId="Supplier"/>
+    <mantle.account.invoice.Invoice invoiceId="NETDISK-INV-001" invoiceTypeEnumId="InvoiceSales" fromPartyId="NETDISK_MINIO"
+                                    toPartyId="USER001" statusId="InvoiceReceived" invoiceDate="2025-09-14 00:00:00" currencyUomId="CNY"
+                                    description="MinIO 云存储服务费用"/>
+    <mantle.account.invoice.InvoiceItem invoiceId="NETDISK-INV-001" invoiceItemSeqId="01" itemTypeEnumId="ItemExpHosting"
+                                        quantity="1" amount="7000.00" description="MinIO 云存储 2025年9月"/>
+    <mantle.work.effort.WorkEffortInvoice invoiceId="NETDISK-INV-001" workEffortId="NETDISK"/>
+
+    <!-- Comments -->
+    <mantle.party.communication.CommunicationEvent communicationEventId="NETDISK-TASK-001-01" communicationEventTypeId="Comment"
+                                                   contactMechTypeEnumId="CmtWebForm" statusId="CeSent" fromPartyId="USER002" entryDate="2025-09-14 17:00:00"
+                                                   contentType="text/plain" subject="存储桶配额实现问题">
+        <body>是否需要为每个用户单独配置配额，还是统一5GB限制？</body>
+    </mantle.party.communication.CommunicationEvent>
+    <mantle.work.effort.WorkEffortCommEvent workEffortId="NETDISK-TASK-001" communicationEventId="NETDISK-TASK-001-01"/>
+</entity-facade-xml>
