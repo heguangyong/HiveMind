@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="demo">
+    <!-- Update Existing Tasks with Priority -->
+    <mantle.work.effort.WorkEffort workEffortId="MINIO-TASK-001" priority="1"/>
+    <mantle.work.effort.WorkEffort workEffortId="MINIO-TASK-004" priority="1"/>
+    <mantle.work.effort.WorkEffort workEffortId="MINIO-TASK-005" priority="2"/>
+    <mantle.work.effort.WorkEffort workEffortId="MINIO-TASK-006" priority="2"/>
+    <mantle.work.effort.WorkEffort workEffortId="MINIO-TASK-007" priority="3"/>
+    <mantle.work.effort.WorkEffort workEffortId="MINIO-TASK-008" priority="1"/>
+    <mantle.work.effort.WorkEffort workEffortId="MINIO-TASK-009" priority="2"/>
+    <mantle.work.effort.WorkEffort workEffortId="MINIO-TASK-010" priority="2"/>
+    <mantle.work.effort.WorkEffort workEffortId="MINIO-TASK-011" priority="3"/>
+    <mantle.work.effort.WorkEffort workEffortId="MINIO-TASK-012" priority="1"/>
+    <mantle.work.effort.WorkEffort workEffortId="MINIO-TASK-013" priority="2"/>
+    <mantle.work.effort.WorkEffort workEffortId="MINIO-TASK-014" priority="3"/>
+    <mantle.work.effort.WorkEffort workEffortId="MINIO-TASK-015" priority="3"/>
+    <mantle.work.effort.WorkEffort workEffortId="MINIO-TASK-016" priority="2"/>
+    <mantle.work.effort.WorkEffort workEffortId="MINIO-TASK-017" priority="2"/>
+    <mantle.work.effort.WorkEffort workEffortId="MINIO-TASK-018" priority="2"/>
+    <mantle.work.effort.WorkEffort workEffortId="MINIO-TASK-019" priority="2"/>
+    <mantle.work.effort.WorkEffort workEffortId="MINIO-TASK-020" priority="3"/>
+
+    <!-- New Dependencies for Incremental Progress -->
+    <mantle.work.effort.WorkEffortAssoc workEffortId="MINIO-TASK-001" toWorkEffortId="MINIO-TASK-004" workEffortAssocTypeEnumId="WeatDependsOn"/>
+    <mantle.work.effort.WorkEffortAssoc workEffortId="MINIO-TASK-004" toWorkEffortId="MINIO-TASK-005" workEffortAssocTypeEnumId="WeatDependsOn"/>
+    <mantle.work.effort.WorkEffortAssoc workEffortId="MINIO-TASK-005" toWorkEffortId="MINIO-TASK-006" workEffortAssocTypeEnumId="WeatDependsOn"/>
+    <mantle.work.effort.WorkEffortAssoc workEffortId="MINIO-TASK-003" toWorkEffortId="MINIO-TASK-007" workEffortAssocTypeEnumId="WeatDependsOn"/>
+    <mantle.work.effort.WorkEffortAssoc workEffortId="MINIO-TASK-001" toWorkEffortId="MINIO-TASK-016" workEffortAssocTypeEnumId="WeatDependsOn"/>
+
+    <mantle.work.effort.WorkEffortAssoc workEffortId="MINIO-MS-001" toWorkEffortId="MINIO-TASK-008" workEffortAssocTypeEnumId="WeatDependsOn"/>
+    <mantle.work.effort.WorkEffortAssoc workEffortId="MINIO-TASK-008" toWorkEffortId="MINIO-TASK-009" workEffortAssocTypeEnumId="WeatDependsOn"/>
+    <mantle.work.effort.WorkEffortAssoc workEffortId="MINIO-TASK-009" toWorkEffortId="MINIO-TASK-010" workEffortAssocTypeEnumId="WeatDependsOn"/>
+    <mantle.work.effort.WorkEffortAssoc workEffortId="MINIO-TASK-010" toWorkEffortId="MINIO-TASK-011" workEffortAssocTypeEnumId="WeatDependsOn"/>
+    <mantle.work.effort.WorkEffortAssoc workEffortId="MINIO-TASK-009" toWorkEffortId="MINIO-TASK-017" workEffortAssocTypeEnumId="WeatDependsOn"/>
+
+    <mantle.work.effort.WorkEffortAssoc workEffortId="MINIO-MS-002" toWorkEffortId="MINIO-TASK-012" workEffortAssocTypeEnumId="WeatDependsOn"/>
+    <mantle.work.effort.WorkEffortAssoc workEffortId="MINIO-TASK-012" toWorkEffortId="MINIO-TASK-013" workEffortAssocTypeEnumId="WeatDependsOn"/>
+    <mantle.work.effort.WorkEffortAssoc workEffortId="MINIO-TASK-013" toWorkEffortId="MINIO-TASK-014" workEffortAssocTypeEnumId="WeatDependsOn"/>
+    <mantle.work.effort.WorkEffortAssoc workEffortId="MINIO-TASK-014" toWorkEffortId="MINIO-TASK-015" workEffortAssocTypeEnumId="WeatDependsOn"/>
+    <mantle.work.effort.WorkEffortAssoc workEffortId="MINIO-MS-001" toWorkEffortId="MINIO-TASK-018" workEffortAssocTypeEnumId="WeatDependsOn"/>
+    <mantle.work.effort.WorkEffortAssoc workEffortId="MINIO-TASK-017" toWorkEffortId="MINIO-TASK-019" workEffortAssocTypeEnumId="WeatDependsOn"/>
+    <mantle.work.effort.WorkEffortAssoc workEffortId="MINIO-MS-003" toWorkEffortId="MINIO-TASK-020" workEffortAssocTypeEnumId="WeatDependsOn"/>
+</entity-facade-xml>
