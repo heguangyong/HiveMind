@@ -15,8 +15,8 @@ along with this software (see the LICENSE.md file). If not, see
 <entity-facade-xml type="seed-initial">
     <!-- Minio Project Management App -->
     <moqui.security.ArtifactGroup artifactGroupId="MINIO" description="Minio Project Management App"/>
-    <moqui.security.ArtifactGroupMember artifactGroupId="MINIO" artifactName="component://minio/screen/MinioProjectManagement.xml" artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y"/>
-    <moqui.security.ArtifactGroupMember artifactGroupId="MINIO" artifactName="component://minio/screen/MinioApp.xml" artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y"/>
+    <moqui.security.ArtifactGroupMember artifactGroupId="MINIO" artifactName="component://moqui-minio/screen/MinioProjectManagement.xml" artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y"/>
+    <moqui.security.ArtifactGroupMember artifactGroupId="MINIO" artifactName="component://moqui-minio/screen/MinioApp.xml" artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y"/>
 
     <!-- Permissions for ADMIN users -->
     <moqui.security.ArtifactAuthz artifactAuthzId="MINIO_ADMIN_ALL" userGroupId="ADMIN" artifactGroupId="MINIO" authzTypeEnumId="AUTHZT_ALWAYS" authzActionEnumId="AUTHZA_ALL"/>

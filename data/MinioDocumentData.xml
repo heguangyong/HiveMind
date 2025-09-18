@@ -33,11 +33,11 @@ along with this software (see the LICENSE.md file). If not, see
 
     <!-- EmailTemplates for Minio Update Notifications -->
     <moqui.basic.email.EmailTemplate emailTemplateId="MINIO_WIKI_PAGE_UPDATE" description="Minio 维基页面更新通知"
-                                     emailServerId="SYSTEM" bodyScreenLocation="component://minio/screen/WikiPageUpdateNotification.xml"
+                                     emailServerId="SYSTEM" bodyScreenLocation="component://moqui-minio/screen/WikiPageUpdateNotification.xml"
                                      webappName="webroot" fromAddress="" ccAddresses="" bccAddresses=""
                                      subject="Wiki Page Updated: ${document.wikiSpaceId}/${document.pagePath}" sendPartial="Y"/>
     <moqui.basic.email.EmailTemplate emailTemplateId="MINIO_TASK_UPDATE" description="Minio 任务更新通知"
-                                     emailServerId="SYSTEM" bodyScreenLocation="component://minio/screen/TaskUpdateNotification.xml"
+                                     emailServerId="SYSTEM" bodyScreenLocation="component://moqui-minio/screen/TaskUpdateNotification.xml"
                                      webappName="webroot" fromAddress="" ccAddresses="" bccAddresses=""
                                      subject="Task Updated: ${document._id} - ${document.name}" sendPartial="Y"/>
 
